@@ -6,9 +6,9 @@
 
 Console.Clear();
 Console.WriteLine("Введите число 1 ");
-int number1 = int.Parse(Console.ReadLine());
+int number1 = int.Parse(Console.ReadLine()!);
 Console.WriteLine("введите число 2 ");
-int number2 = int.Parse(Console.ReadLine());
+int number2 = int.Parse(Console.ReadLine()!);
 // int sqr = number2*number2;
 if (number1 == number2 * number2)
 {
