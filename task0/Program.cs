@@ -8,7 +8,7 @@
 
 Console.Clear();
 Console.Write("введите число: ");
-int number = int.Parse (Console.ReadLine()); 
+int number = int.Parse(Console.ReadLine()); 
 // из консоли приходит символьный (строковый) тип данных, переводим в числовой
 int sqr = number*number; 
 Console.WriteLine("квадрат числа "+ number + "равен = " +sqr);
