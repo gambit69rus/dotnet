@@ -14,53 +14,34 @@ Console.Write("Введите координаты x2: ");
 long x2 = long.Parse(Console.ReadLine()!);
 Console.Write("Введите координаты y2: ");
 long y2 = long.Parse(Console.ReadLine()!);
-long length = 0;
-if ((x1 > 0) && (x2 > 0))
-{
-    if (x1 > x2)
-    {
-        length = x1 - x2;
-    }
-    else
-    {
-        length = x2 - x1;
-    }
-}
-else if ((x1 < 0) && (x2 < 0))
-{
-    if (x1 > x2)
-    {
-        length = x2 - x1;
-    }
-    else
-    {
-        length = x1 - x2;
-    }
-
-}
-long width = 0;
-if ((y1 > 0) && (y2 > 0))
-{
-    if (y1 > y2)
-    {
-        width = y1 - y2;
-    }
-    else
-    {
-        width = y2 - y1;
-    }
-}
-else if ((y1 < 0) && (y2 < 0))
-{
-    if (y1 > y2)
-    {
-        width = y2 - y1;
-    }
-    else
-    {
-        width = y1 - y2;
-    }
-
-}
-double result = Math.Round(Math.Sqrt(length * length + width * width), 2);
+long coord1 = calcLength(x1, y1);
+long coord2 = calcLength(x2, y2);
+double result = Math.Round(Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)), 2);
 Console.WriteLine($"Расстояние между точками {result}");
+long calcLength(long coord1, long coord2)
+{
+    long res = 0;
+    if ((coord1 >= 0) && (coord2 >= 0))
+    {
+        if (coord1 > coord2)
+        {
+            res = coord1 - coord2;
+        }
+        else
+        {
+            res = coord2 - coord1;
+        }
+    }
+    else if ((coord1 <= 0) && (coord2 <= 0))
+    {
+        if (coord1 > coord2)
+        {
+            res = coord1 - coord2;
+        }
+        else
+        {
+            res = coord2 - coord1;
+        }
+    }
+    return res;
+}
