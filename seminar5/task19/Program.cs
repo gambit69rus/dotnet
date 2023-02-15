@@ -42,6 +42,6 @@ void PrintArray(int[] someArray)
 int InputNumber(string message)
 {
     Console.Write($"{message}: ");
-    int res = int.Parse(Console.ReadLine());
+    int res = int.Parse(Console.ReadLine()!);
     return res;
 }
